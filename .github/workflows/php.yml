@@ -18,7 +18,7 @@ jobs:
     - name: composer php
       run: |
         php composer.phar require mustangostang/spyc
-        sed -i 's/your.url/${{ secrets.YOURURL }}/g' /v2c.php
+        sed -i 's/yoururl/${{ secrets.YOURURL }}/g' /v2c.php
         php v2c.php
         zip -r clash.zip clash.yaml
     - name: Send mail
