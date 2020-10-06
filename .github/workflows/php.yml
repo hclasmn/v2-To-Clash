@@ -17,7 +17,8 @@ jobs:
 
     - name: composer php
       run: |
-        composer require mustangostang/spyc
+        php composer.phar require mustangostang/spyc
+        sed -i 's/your.url/${{ secrets.YOURURL }}/g' /v2c.php
         php v2c.php
         zip -r clash.zip clash.yaml
     - name: Send mail
@@ -30,5 +31,5 @@ jobs:
         subject: GitHub Actions Auto ACME
         body: Build job of ${{github.repository}} completed successfully!
         to: hclasmn@qq.com
-        from: GitHub Actions Auto ACME
+        from: GitHub Actions V2rayToClash
         attachments: ./clash.zip
