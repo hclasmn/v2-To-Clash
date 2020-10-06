@@ -22,3 +22,12 @@ docker-compose up -d
 
 然后 打开浏览器 http://127.0.0.1:1234 
 即可使用yacd管理clash
+
+增加action自动化转换
+$url=“{{ secrets.YOURURL }}”; //你的订阅地址
+```
+        server_port: 465
+        username: ${{ secrets.MAILUSERNAME }}
+        password: ${{ secrets.MAILPASSWORD }}
+```
+邮箱推送，可选
