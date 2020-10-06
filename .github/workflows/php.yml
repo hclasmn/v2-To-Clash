@@ -11,6 +11,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      NAME: ${{ secrets.YOURURL }}
 
     steps:
     - uses: actions/checkout@v2
@@ -21,7 +23,7 @@ jobs:
     - name: php
       run: |
         php v2c.php
-        zip -r ${{ secrets.YOURURL }}.zip clash.yaml
+        zip -r env.NAME.zip env.NAME.yaml
     - name: Send mail
       uses: dawidd6/action-send-mail@v2
       with:
@@ -33,4 +35,4 @@ jobs:
         body: Build job of ${{github.repository}} completed successfully!
         to: hclasmn@qq.com
         from: GitHub Actions V2rayToClash
-        attachments: ./${{ secrets.YOURURL }}.zip
+        attachments: ./env.NAME.zip  
