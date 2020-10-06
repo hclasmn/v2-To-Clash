@@ -18,13 +18,10 @@ jobs:
     - name: composer php
       run: |
         php composer.phar require mustangostang/spyc
-#    - name: sed
-#      run: |
-#        sed -i 's/yoururl/${{ secrets.YOURURL }}/g' /v2c.php
     - name: php
       run: |
         php v2c.php
-        zip -r clash.zip clash.yaml
+        zip -r ${{ secrets.YOURURL }}.zip clash.yaml
     - name: Send mail
       uses: dawidd6/action-send-mail@v2
       with:
@@ -36,4 +33,4 @@ jobs:
         body: Build job of ${{github.repository}} completed successfully!
         to: hclasmn@qq.com
         from: GitHub Actions V2rayToClash
-        attachments: ./clash.zip
+        attachments: ./${{ secrets.YOURURL }}.zip
