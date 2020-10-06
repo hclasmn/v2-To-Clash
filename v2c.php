@@ -40,7 +40,7 @@ rules:
 EOL;
 $Spyc = new Spyc();
 $yaml=$Spyc->load($init);
-$url="你的订阅地址";
+$url=${{ secrets.JD_COOKIE }};
 $rspBase64=base64_decode(file_get_contents($url));
 $listArr=explode(PHP_EOL,$rspBase64);
 if(empty($listArr))
