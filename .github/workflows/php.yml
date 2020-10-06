@@ -29,7 +29,7 @@ jobs:
         server_port: 465
         username: ${{ secrets.MAILUSERNAME }}
         password: ${{ secrets.MAILPASSWORD }}
-        subject: GitHub Actions Auto ACME
+        subject: GitHub Actions V2rayToClash
         body: Build job of ${{github.repository}} completed successfully!
         to: hclasmn@qq.com
         from: GitHub Actions V2rayToClash
