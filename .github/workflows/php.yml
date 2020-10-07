@@ -34,6 +34,6 @@ jobs:
         password: ${{ secrets.MAILPASSWORD }}
         subject: GitHub Actions V2rayToClash
         body: Build job of ${{github.repository}} completed successfully!
-        to: hclasmn@qq.com
+        to: ${{ secrets.MAILCOM }}
         from: GitHub Actions V2rayToClash
         attachments: ./clash.zip  
