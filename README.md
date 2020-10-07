@@ -31,5 +31,6 @@ docker-compose up -d
         server_port: 465
         username: ${{ secrets.MAILUSERNAME }}
         password: ${{ secrets.MAILPASSWORD }}
+        ${{ secrets.MAILCOM }} // 接收邮件邮箱
 ```
 邮箱推送，可选
