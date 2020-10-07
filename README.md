@@ -46,5 +46,6 @@ docker-compose up -d
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
-添加到action直接在github仓库生成yaml
+添加到action中yml
+自动 Commit 并 Push 到本仓库.
 公共仓库请删除（参考：https://www.ioiox.com/archives/104.html）
