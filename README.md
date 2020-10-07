@@ -34,3 +34,17 @@ docker-compose up -d
         ${{ secrets.MAILCOM }} // 接收邮件邮箱
 ```
 邮箱推送，可选
+```
+    - name: Commit
+      run: |
+        git config --global user.email hclasmn@qq.com
+        git config --global user.name hclasmn
+        git add ./ssl/
+        git commit -m "Update certificate files" -a
+    - name: Push
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+```
+添加到action直接在github仓库生成yaml
+公共仓库请删除（参考：https://www.ioiox.com/archives/104.html）
